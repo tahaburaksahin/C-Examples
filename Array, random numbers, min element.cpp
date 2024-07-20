@@ -7,21 +7,21 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    double a, b; // границы отрезка [a,b]
-    cout << "Введите число а: ";
+    double a, b; //  [a,b]
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г® Г : ";
     cin >> a;
-    cout << "Введите число в: ";
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г® Гў: ";
     cin >> b;
 
-    double matrix[10][10]; // матрица случайных чисел
+    double matrix[10][10]; // 
 
-    // инициализация двумерного массива случайными числами
+    
     for (int counter_rows = 0; counter_rows < 10; counter_rows++)
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
-            matrix[counter_rows][counter_columns] = (double(rand()) / RAND_MAX) * (b - a) + a; // генерация случайных вещестчвенных чисел равномерно распределённых на отрезке [a,b]
+            matrix[counter_rows][counter_columns] = (double(rand()) / RAND_MAX) * (b - a) + a; ,b]
 
-    cout << "\nСгенерированный массив вещественных чисел" << endl;
-    // вывод сгенерированного массива
+    cout << "\nГ‘ГЈГҐГ­ГҐГ°ГЁГ°Г®ГўГ Г­Г­Г»Г© Г¬Г Г±Г±ГЁГў ГўГҐГ№ГҐГ±ГІГўГҐГ­Г­Г»Гµ Г·ГЁГ±ГҐГ«" << endl;
+    // 
     for (int counter_rows = 0; counter_rows < 10; counter_rows++)
     {
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
@@ -29,39 +29,39 @@ int main()
         cout << endl;
     }
 
-    double min = matrix[0][0]; // переменная, для хранения минимального значения
-    int nom; // порядковый номер строки с минимальным элеиентом
+    double min = matrix[0][0]; // 
+    int nom; 
 
-    // поиск минимального элемента в массиве
+    
     for (int counter_rows = 0; counter_rows < 10; counter_rows++)
     {
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
         {
             if (matrix[counter_rows][counter_columns] < min)
             {
-                min = matrix[counter_rows][counter_columns]; // сохраняем значение минимального элемента
-                nom = counter_rows; // запоминаем номер строки
+                min = matrix[counter_rows][counter_columns]; // 
+                nom = counter_rows; // 
             }
         }
     }
 
-    cout << "\nНомер строки с минимальным элементом: " << (nom + 1) << endl;
-    cout << "Минимальный элемент: " << min << endl;
-    // перестановка строк
-    if (nom != 0) // если минимальный элемент не содержится в первой строке
+    cout << "\nГЌГ®Г¬ГҐГ° Г±ГІГ°Г®ГЄГЁ Г± Г¬ГЁГ­ГЁГ¬Г Г«ГјГ­Г»Г¬ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Г¬: " << (nom + 1) << endl;
+    cout << "ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ: " << min << endl;
+    // ГЇГҐГ°ГҐГ±ГІГ Г­Г®ГўГЄГ  Г±ГІГ°Г®ГЄ
+    if (nom != 0) // 
     {
-        double temp[10]; // временный массив для хранения первой строки
+        double temp[10]; // 
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
-            temp[counter_columns] = matrix[0][counter_columns]; // сохраняем значения первой строки во временный массив
+            temp[counter_columns] = matrix[0][counter_columns]; // 
 
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
-            matrix[0][counter_columns] = matrix[nom][counter_columns]; // сохраняем значения строки с минимальным элементом в перой строке двумерного масссива
+            matrix[0][counter_columns] = matrix[nom][counter_columns]; // 
 
         for (int counter_columns = 0; counter_columns < 10; counter_columns++)
-            matrix[nom][counter_columns] = temp[counter_columns]; // перемещаем значения из временного массива на место строки с мин элементом
+            matrix[nom][counter_columns] = temp[counter_columns]; //
 
-    // вывод массива с перестановленными строками
-        cout << "\nМассив с перестановленными строками" << endl;
+    // 
+        cout << "\nГЊГ Г±Г±ГЁГў Г± ГЇГҐГ°ГҐГ±ГІГ Г­Г®ГўГ«ГҐГ­Г­Г»Г¬ГЁ Г±ГІГ°Г®ГЄГ Г¬ГЁ" << endl;
         for (int counter_rows = 0; counter_rows < 10; counter_rows++)
         {
             for (int counter_columns = 0; counter_columns < 10; counter_columns++)
@@ -69,7 +69,7 @@ int main()
             cout << endl;
         }
 
-    } // конец if
+    } // ГЄГ®Г­ГҐГ¶ if
 
     return 0;
 }
